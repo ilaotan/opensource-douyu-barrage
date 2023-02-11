@@ -71,6 +71,17 @@ public class Main {
 			}
 
 		});
+		CronUtil.schedule("26,56 */1 * * *", (Task) () -> {
+			String txt = "#查询";
+			if (Main.context.get() != null) {
+				((ChannelHandlerContext)Main.context.get()).writeAndFlush(String.format(DouyuConfiguration.defaultPushMessageType().getPushMessage(), Main.encode(txt), cookie.getAcf_uid(), System.currentTimeMillis()));
+				Main.logger.info("发送 #查询卡 信息");
+			} else {
+				Main.logger.info("发送失败 没有找到 context");
+			}
+
+		});
+
 		CronUtil.setMatchSecond(true);
 		CronUtil.start();
 		logger.info("定时任务启动");
