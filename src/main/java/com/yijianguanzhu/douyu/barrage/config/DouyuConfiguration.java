@@ -42,7 +42,7 @@ public final class DouyuConfiguration {
 	private static volatile NioEventLoopGroup group;
 	private static volatile DefaultPushMessageType defaultPullMessageType;
 	private static volatile DefaultPushMessageType defaultPushMessageType;
-	public static volatile long RECONNECTION_DELAY_SECONDS = 1800L;
+	public static volatile long RECONNECTION_DELAY_SECONDS = 300L;
 
 	/**
 	 * 获取消息处理线程池
