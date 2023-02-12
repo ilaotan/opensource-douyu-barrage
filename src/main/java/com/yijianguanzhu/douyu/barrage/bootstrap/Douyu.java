@@ -70,7 +70,7 @@ public class Douyu {
 		/**
 		 * 当与服务端断开连接时，是否重连服务端，默认值 false
 		 */
-		private boolean retry = false;
+		private boolean retry = true;
 		private DouyuCookie cookie;
 		private boolean isPush;
 
